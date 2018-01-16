@@ -1,28 +1,67 @@
+* {
+  border: 1px solid black;
+}
 
 body {
-  background-color: rgb(243, 119, 119);
+  background-color: rgb(250, 129, 129);
   color: black;
   padding: 20px;
-  font: times;
-  border: 10px;
+  font: georgia;
+  border: 1px solid black;
 }
 
 .salmonPic {
+  border: 1px solid black;
   width: 100px;
   height: 40px;
 }
 
+h2 {
+  border: 1px solid black;
+  color: rgb(0, 71, 165);
+  font-size: 30px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+h3 {
+  border: 1px solid black;
+  color: white;
+  font-size: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+p {
+  border: 1px solid black;
+}
+
 #header-banner {
-  width: 100%;
-  text-align: center;
+  border: 1px solid black;
+  width: 55%;
+  text-align: left;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 40px;
   font-weight: bold;
-  color: rgb(49, 69, 250);
-  text-shadow: -1px -1px 0 rgb(59, 233, 74);
+  color: rgb(0, 83, 190);
+  text-shadow: -1px -1px 0 rgb(38, 150, 47);
+}
+
+#slogan {
+  border: 1px solid black;
+  text-align: center;
+  color:rgb(46, 150, 60);
+  width:27%;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 20px;
+  text-shadow: -1px -1px 0 rgb(0, 71, 165);
 }
 
 #headline-img {
+  border: 1px solid black;
   width: 20px;
   height: 20px;
+}
+
+#swim-upstream {
+  transform: scaleX(-1);
+  filter: FlipH;
 }
