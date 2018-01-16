@@ -10,12 +10,6 @@ body {
   border: 1px solid black;
 }
 
-.salmonPic {
-  border: 1px solid black;
-  width: 100px;
-  height: 40px;
-}
-
 h2 {
   border: 1px solid black;
   color: rgb(0, 71, 165);
@@ -32,6 +26,17 @@ h3 {
 
 p {
   border: 1px solid black;
+}
+
+ul li {
+  font-family: arial, sans-serif;
+  font-size: 15px;
+}
+
+.salmonPic {
+  border: 1px solid black;
+  width: 100px;
+  height: 40px;
 }
 
 #header-banner {
