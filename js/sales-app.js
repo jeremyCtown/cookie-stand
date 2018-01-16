@@ -6,22 +6,31 @@ var pike = {
   min: 23,
   max: 65,
   avg: 6.3,
-  hourlyCookies: [],
+  totalCookies: 'A bunch of ',
 
-  hourlySales: function() {
-    return (Math.floor((Math.random() * (this.max - this.min) + this.min) * this.avg));
+  hourlyCookies: function() {
+    return ((Math.floor((Math.random() * (this.max - this.min) + this.min) * this.avg)));
   },
 
-  cookiesByHour: function() 
+  /*totalCookiesCounter: function() {
+
+    for(var i = 0; i < hours.length; i++) {
+      this.totalCookies += this.hourlyCookies();
+      console.log('There are a total of' + this.totalCookies);
+    }
+  },*/
 
   render: function() {
     var ulEl = document.getElementById('pike');
 
     for (var i = 0; i < hours.length; i++) {
       var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + this.hourlySales() + ' cookies';
+      liEl.textContent = hours[i] + this.hourlyCookies() + ' cookies';
       ulEl.appendChild(liEl);
     }
+    liEl = document.createElement('li');
+    liEl.textContent = 'Total: ' + this.totalCookies + ' cookies';
+    ulEl.appendChild(liEl);
   }
 };
 
