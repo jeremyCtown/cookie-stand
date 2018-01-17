@@ -22,7 +22,6 @@ function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer)
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
-  this.salesByHour = [];
 
   this.hourlyCookies = function () {
     return Math.round((Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)) * this.avgCookiesPerCustomer);
