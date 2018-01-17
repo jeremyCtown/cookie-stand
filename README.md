@@ -1,4 +1,4 @@
-# Project #1: About Me
+# Project #2: Pat's Salmon Cookies
 Week 2 Project for Code 201
 
 "Pat's Salmon Cookies"
@@ -15,10 +15,11 @@ header font family source: https://fonts.googleapis.com/css?family=Gloria+Hallel
 
 ## Day 1
 
-Focused on using object-literals to create pages
+Focused on using object-literals to create pages. Object-literals completed on day 2
 
 ## Day 2
 
+Completed object-literals assignment. Started work on constructor functions and inserting a table into site using JS.
 
 ## Day 3
 
