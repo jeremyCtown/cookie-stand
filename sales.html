@@ -17,6 +17,34 @@
     <h2 id = "salesData">Cookie Sales by Store Location</h2>
 
     <table id="dailyStoreSales"></table>
+
+    <br />
+  
+    <form id="newStore">
+      <fieldset>
+        <legend>Add a New Store Location</legend>
+        <br />
+  
+        <label for="newStoreName">Store Name: </label>
+        <input name="newStoreName" type="text">
+        <br />
+  
+        <label for="newMin">Hourly Min. Customers: </label>
+        <input name="newMin" type="text">
+        <br />
+  
+        <label for="newMax">Hourly Max Customers: </label>
+        <input name="newMax" type="text">
+        <br />
+  
+        <label for="newAvg">Average Cookies per Transaction: </label>
+        <input name="newAvg" type="text">
+        <br />
+        <br />
+        <button id="addStore">Add a Store Location</button>
+  
+      </fieldset>
+    </form>
     
     <script type="text/javascript" src="js/sales-app.js"></script>
   </body>
