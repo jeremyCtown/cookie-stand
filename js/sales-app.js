@@ -1,66 +1,76 @@
 'use strict';
-/*
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 var dailyStoreSales = document.getElementById('dailyStoreSales');
 
 function makeHeaderRow() {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.textContent = ' - Location - ';
+  thEl.textContent = 'Location';
   trEl.appendChild(thEl);
-  dailyStoreSales.appendChild(trEl);
 
   for (var i = 0; i < hours.length; i++) {
-    var thEl = document.createElement('th');
-    thEl.textContent = ' - ' + hours[i] + ' - ';
+    thEl = document.createElement('th');
+    thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
   dailyStoreSales.appendChild(trEl);
-};
+}
 
 function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
-  
-  this.hourlySales = function() {
-    
-      var hourlyCookies = function () {
-        return Math.round((Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)) * this.avgCookiesPerCustomer);
-      };
-    
-      var cookieSales =  function () {
-        var salesByHour = [];
-        var totalCookies = 0;
-        for(var i = 0 ; i < hours.length ; i++) {
-          if(i === (hours.length - 1)) { 
-            salesByHour[i] = totalCookies;
-          } else { 
-            salesByHour[i] = this.hourlyCookies(); 
-            totalCookies += parseInt(salesByHour[i]);
-          }
-        }
-        return salesByHour;
-      },
+  this.salesByHour = [];
 
+  this.hourlyCookies = function () {
+    return Math.round((Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)) * this.avgCookiesPerCustomer);
+  };
 
-  }
+  this.cookieSales = function () {
+    var salesByHour = [];
+    var totalCookies = 0;
+    for(var i = 0 ; i < hours.length ; i++) {
+      if(i === (hours.length - 1)) {
+        salesByHour[i] = totalCookies;
+      } else {
+        salesByHour.push(this.hourlyCookies());
+        totalCookies += parseInt(salesByHour[i]);
+      }
+    }
+    return salesByHour;
+  };
 }
 
 StoreSales.prototype.render = function() {
-
   var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.location;
+  trEl.appendChild(tdEl);
+  dailyStoreSales.appendChild(trEl);
+
+  var dailyCookies = this.cookieSales();
   for (var i = 0; i < hours.length; i++) {
-    var tdEl = document.createElement('td');
-    tdEl.textContent = hours[i];
-    tdEl.appendChild(thEl);
+    tdEl = document.createElement('td');
+    tdEl.textContent = dailyCookies[i];
+    trEl.appendChild(tdEl);
   }
   dailyStoreSales.appendChild(trEl);
 };
 
+var pikePlace = new StoreSales('Pike Place', 23, 65, 6.3);
+var seattleCenter = new StoreSales('Seattle Center', 11, 38, 3.7);
+var capHill = new StoreSales('Capitol Hill', 20, 38, 2.3);
+var alki = new StoreSales('Alki Beach', 2, 16, 4.6);
+var seaTac = new StoreSales('SeaTac Airport', 3, 24, 1.2);
+
 makeHeaderRow();
+pikePlace.render();
+seattleCenter.render();
+capHill.render();
+alki.render();
+seaTac.render();
 
 
 
@@ -68,7 +78,13 @@ makeHeaderRow();
 
 
 
-*/
+
+
+
+
+
+
+/*
 var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total: '];
 
 var pike = {
@@ -100,7 +116,7 @@ var pike = {
     for (var i = 0; i < hours.length; i++) {
       var liEl = document.createElement('li');
       liEl.textContent = hours[i] + dailyCookies[i];
-      console.log ('Pike Sales @ ' + hours[i] + dailyCookies[i]); //logs hours and numebrs into the console
+      console.log ('Pike Sales @ ' + hours[i] + dailyCookies[i]); //logs hours and numbers into the console
       ulEl.appendChild(liEl);
     }
   }
@@ -252,4 +268,4 @@ seaTac.render();
 seattleCenter.render();
 capHill.render();
 alki.render();
-
+*/
