@@ -23,6 +23,10 @@ function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer)
   this.maxCustomers = maxCustomers;
   this.avgCookiesPerCustomer = avgCookiesPerCustomer;
 
+}
+
+StoreSales.prototype.render = function() {
+
   this.hourlyCookies = function () {
     return Math.round((Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)) * this.avgCookiesPerCustomer);
   };
@@ -40,9 +44,7 @@ function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer)
     }
     return salesByHour;
   };
-}
 
-StoreSales.prototype.render = function() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = this.location;
