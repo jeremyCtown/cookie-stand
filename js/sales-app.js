@@ -60,6 +60,20 @@ StoreSales.prototype.render = function() {
   dailyStoreSales.appendChild(trEl);
 };
 
+function makeFooterRow() {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('td');
+  thEl.textContent = 'Total';
+  trEl.appendChild(thEl);
+
+  for (var i = 0; i < hours.length; i++) {
+    thEl = document.createElement('td');
+    thEl.textContent = '';
+    trEl.appendChild(thEl);
+  }
+  dailyStoreSales.appendChild(trEl);
+}
+
 var pikePlace = new StoreSales('Pike Place', 23, 65, 6.3);
 var seattleCenter = new StoreSales('Seattle Center', 11, 38, 3.7);
 var capHill = new StoreSales('Capitol Hill', 20, 38, 2.3);
@@ -72,6 +86,7 @@ seattleCenter.render();
 capHill.render();
 alki.render();
 seaTac.render();
+makeFooterRow();
 
 
 
