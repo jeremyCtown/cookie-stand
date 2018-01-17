@@ -1,5 +1,74 @@
 'use strict';
 
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
+
+var dailyStoreSales = document.getElementById('dailyStoreSales');
+
+function makeHeaderRow() {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = ' - Location - ';
+  trEl.appendChild(thEl);
+  dailyStoreSales.appendChild(trEl);
+
+  for (var i = 0; i < hours.length; i++) {
+    var thEl = document.createElement('th');
+    thEl.textContent = ' - ' + hours[i] + ' - ';
+    trEl.appendChild(thEl);
+  }
+  dailyStoreSales.appendChild(trEl);
+};
+
+function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
+  this.location = location;
+  this.minCustomers = minCustomers;
+  this.maxCustomers = maxCustomers;
+  this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+  
+  this.hourlySales = function() {
+    
+      var hourlyCookies = function () {
+        return Math.round((Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)) * this.avgCookiesPerCustomer);
+      };
+    
+      var cookieSales =  function () {
+        var salesByHour = [];
+        var totalCookies = 0;
+        for(var i = 0 ; i < hours.length ; i++) {
+          if(i === (hours.length - 1)) { 
+            salesByHour[i] = totalCookies;
+          } else { 
+            salesByHour[i] = this.hourlyCookies(); 
+            totalCookies += parseInt(salesByHour[i]);
+          }
+        }
+        return salesByHour;
+      },
+
+
+  }
+}
+
+StoreSales.prototype.render = function() {
+
+  var trEl = document.createElement('tr');
+  for (var i = 0; i < hours.length; i++) {
+    var tdEl = document.createElement('td');
+    tdEl.textContent = hours[i];
+    tdEl.appendChild(thEl);
+  }
+  dailyStoreSales.appendChild(trEl);
+};
+
+makeHeaderRow();
+
+
+
+
+
+
+
+/*
 var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total: '];
 
 var pike = {
@@ -156,7 +225,7 @@ var alki = {
     var totalCookies = 0;
     for(var i = 0; i < hours.length; i++) {
       if(i === (hours.length - 1)) {
-        salesByHour[i] = totalCookies[i] + ' cookies'; 
+        salesByHour[i] = totalCookie + ' cookies'; 
       } else {
         salesByHour[i] = this.hourlyCookies();
         totalCookies += parseInt(salesByHour[i]);
@@ -183,3 +252,4 @@ seaTac.render();
 seattleCenter.render();
 capHill.render();
 alki.render();
+*/
