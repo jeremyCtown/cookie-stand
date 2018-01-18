@@ -23,6 +23,7 @@ Built one constructor function with prototype, hopefully can replicate. Webpage 
 
 ## Day 3
 
+Computer issues held up progress but was able to sum hourly totals in a single row at the bottom and allow for new store inputs.
 
 ## Day 4
 
