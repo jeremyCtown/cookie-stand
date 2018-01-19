@@ -6,9 +6,9 @@ var newStoreForm = document.getElementById('newStore');
 
 function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location;
-  this.minCustomers = parseFloat(minCustomers);
-  this.maxCustomers = parseFloat(maxCustomers);
-  this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer);
+  this.minCustomers = parseFloat(minCustomers); // changed as suggested
+  this.maxCustomers = parseFloat(maxCustomers); // changed as suggested
+  this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer); // changed as suggested
   this.customersPerHour = [];
   this.salesPerHour = [];
   this.totalDailyCookies = 0;
@@ -62,14 +62,14 @@ function makeHeaderRow() {
   dailyStoreSales.appendChild(trEl);
 }
 
-function makeFooterRow() {
+function makeFooterRow() { //this now functions correctly
   
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Total';
   trEl.appendChild(tdEl);
 
-  for (var i in hours) {
+  for (var i in hours) { //nested for loop as demonstrated in class
     var hourlyTotal = 0;
     for(var j in allStores) {
       hourlyTotal += allStores[j].salesPerHour[i];
@@ -80,7 +80,7 @@ function makeFooterRow() {
   }
 
   var dailyTotal = 0;
-  for(var j in allStores) {
+  for(var j in allStores) {  // inserted a new for loop to get total total
     dailyTotal += allStores[j].totalDailyCookies;
   }
   tdEl = document.createElement('td');
