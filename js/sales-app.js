@@ -117,7 +117,7 @@ var seaTac = {
     }
     return salesByHour;
   },
-  
+
   render: function() {
     var ulEl = document.getElementById('seaTac');
     var dailyCookies = this.cookieSales();
@@ -169,7 +169,7 @@ var capHill = {
   minCustomers: 20,
   maxCustomers: 38,
   avgCookiesPerCustomer: 2.3,
-  
+
   hourlyCookies: function() {
     return Math.round((Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1) + this.minCustomers))) * this.avgCookiesPerCustomer) + ' cookies';
   },
@@ -204,7 +204,7 @@ var alki = {
   minCustomers: 2,
   maxCustomers: 16,
   avgCookiesPerCustomer: 4.6,
-  
+
   hourlyCookies: function() {
     return Math.round((Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers) - 1) + this.minCustomers)) * this.avgCookiesPerCustomer) + ' cookies';
   },
@@ -214,7 +214,11 @@ var alki = {
     var totalCookies = 0;
     for(var i = 0; i < hours.length; i++) {
       if(i === (hours.length - 1)) {
+<<<<<<< HEAD
         salesByHour[i] = totalCookies + ' cookies'; 
+=======
+        salesByHour[i] = totalCookies + ' cookies';
+>>>>>>> 5efa6772199c7841bf20b6fd4c6dea837a250056
       } else {
         salesByHour[i] = this.hourlyCookies();
         totalCookies += parseInt(salesByHour[i]);
@@ -241,4 +245,8 @@ seaTac.render();
 seattleCenter.render();
 capHill.render();
 alki.render();
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> 5efa6772199c7841bf20b6fd4c6dea837a250056
