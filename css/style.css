@@ -2,7 +2,7 @@
   border: 1px solid black;
 }
 
-body {
+body  {
   background-color: rgb(73, 73, 73);
   color: black;
   padding: 20px;
@@ -75,6 +75,25 @@ td {
   width: 30%;
 }
 
+.merch {
+  position: relative;
+  left: 0%;
+  width: 20%;
+  margin: 3px 0;
+  padding: 2px 0 3px 2px;
+  border: 2px solid rgb(228, 94, 94);
+  background-color: rgb(58, 58, 58);
+  color: rgb(38, 150, 47);
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+.merch-pics {
+  width: 100px;
+  height: 100px;
+}
+
 #pugetSound {
   width: 99%;
   height: 300px;
@@ -107,6 +126,10 @@ td {
   font-size: 20px;
   text-shadow: -1px 0px 0px rgb(247, 103, 103);
 }
+#frosted-cookie {
+background-position: 50% 50%;
+background-attachment: fixed;
+}
 
 #headline-img {
   border: 1px solid black;
@@ -119,6 +142,17 @@ td {
   left: 50%;
   width: 50%;
   margin:0;
+}
+
+#stuff {
+  position: relative;
+  left: 35%;
+  width: 30%;
+  text-align: center;
+}
+
+#chinook {
+  width: 25%;
 }
 
 #salesPage {
