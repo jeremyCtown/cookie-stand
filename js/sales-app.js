@@ -6,9 +6,9 @@ var newStoreForm = document.getElementById('newStore');
 
 function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.location = location;
-  this.minCustomers = parseFloat(minCustomers); // changed as suggested
-  this.maxCustomers = parseFloat(maxCustomers); // changed as suggested
-  this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer); // changed as suggested
+  this.minCustomers = parseFloat(minCustomers);
+  this.maxCustomers = parseFloat(maxCustomers);
+  this.avgCookiesPerCustomer = parseFloat(avgCookiesPerCustomer);
   this.customersPerHour = [];
   this.salesPerHour = [];
   this.totalDailyCookies = 0;
@@ -17,11 +17,12 @@ function StoreSales(location, minCustomers, maxCustomers, avgCookiesPerCustomer)
 
 var allStores = [];
 
-StoreSales.prototype.hourlyCookies = function () { 
+StoreSales.prototype.hourlyCookies = function () {
   for(var i in hours) {
     var cookieTime = Math.floor((Math.floor  (Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)) * this.avgCookiesPerCustomer);
     this.salesPerHour.push(cookieTime);
-    this.totalDailyCookies += cookieTime;
+    this.totalDailyCookies += this.salesPerHour[i];
+    console.log(this.totalDailyCookies);
   }
 };
 
@@ -42,7 +43,30 @@ StoreSales.prototype.render = function() {
   tdEl.textContent = this.totalDailyCookies;
   trEl.appendChild(tdEl);
   dailyStoreSales.appendChild(trEl);
+  this.totalDailyCookies = 0;
 };
+
+function addNewStore(event) {
+  event.preventDefault();
+  console.log('New Store: ' + event.target.newStoreName.value + ' ' + event.target.newMin.value + ', ' + event.target.newMax.value + ', ' + event.target.newAvg.value);
+  var newLocation = event.target.newStoreName.value;
+  var newMin = event.target.newMin.value;
+  var newMax = event.target.newMax.value;
+  var newAvg = event.target.newAvg.value;
+
+  new StoreSales(newLocation, newMin, newMax, newAvg);
+
+  event.target.newStoreName.value = null;
+  event.target.newMin.value = null;
+  event.target.newMax.value = null;
+  event.target.newAvg.value = null;
+
+
+  dailyStoreSales.innerHTML = '';
+  makeHeaderRow();
+  renderAllStores();
+  makeFooterRow();
+}
 
 function makeHeaderRow() {
   var trEl = document.createElement('tr');
@@ -62,27 +86,28 @@ function makeHeaderRow() {
   dailyStoreSales.appendChild(trEl);
 }
 
-function makeFooterRow() { //this now functions correctly
+function makeFooterRow() {
   
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Total';
   trEl.appendChild(tdEl);
 
-  for (var i in hours) { //nested for loop as demonstrated in class
-    var hourlyTotal = 0;
+  var dailyTotal = 0;
+  var hourlyTotal = 0;
+  for (var i in hours) {
+
+    hourlyTotal = 0;
+
     for(var j in allStores) {
       hourlyTotal += allStores[j].salesPerHour[i];
+      dailyTotal += allStores[j].salesPerHour[i];
     }
     tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
   }
 
-  var dailyTotal = 0;
-  for(var j in allStores) {  // inserted a new for loop to get total total
-    dailyTotal += allStores[j].totalDailyCookies;
-  }
   tdEl = document.createElement('td');
   tdEl.textContent = dailyTotal;
   trEl.appendChild(tdEl);
@@ -95,22 +120,6 @@ function renderAllStores() {
   }
 }
 
-function addNewStore(event) {
-  event.preventDefault();
-  console.log('New Store: ' + event.target.newStoreName.value + ' ' + event.target.newMin.value + ', ' + event.target.newMax.value + ', ' + event.target.newAvg.value);
-  var newLocation = event.target.newStoreName.value;
-  var newMin = event.target.newMin.value;
-  var newMax = event.target.newMax.value;
-  var newAvg = event.target.newAvg.value;
-
-  new StoreSales(newLocation, newMin, newMax, newAvg);
-
-  dailyStoreSales.innerHTML = '';
-  makeHeaderRow();
-  renderAllStores();
-  makeFooterRow();
-}
-
 var pikePlace = new StoreSales('Pike Place', 23, 65, 6.3);
 var seattleCenter = new StoreSales('Seattle Center', 11, 38, 3.7);
 var capHill = new StoreSales('Capitol Hill', 20, 38, 2.3);
@@ -121,4 +130,4 @@ newStoreForm.addEventListener('submit', addNewStore);
 
 makeHeaderRow();
 renderAllStores();
-makeFooterRow()
+makeFooterRow();
