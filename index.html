@@ -5,18 +5,19 @@
     <title>Home - Pat's Salmon Cookies</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Abel|Montserrat|Gloria+Hallelujah|Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Abel|Montserrat|Gloria+Hallelujah|Oswald|Kaushan+Script|Rock+Salt" rel="stylesheet">
   </head>
 
   <body background="images/salmon2.png" id="coolSalmonFace">
     <header>
-      <nav>
+      <nav id="header">
         <h1>Pat's Salmon Cookies</h1> 
         <h2>Surprisingly tasty. Northwest fresh.</h2>
-        <img src="images/salmon.png">
+        <img src="images/salmon2.png">
         <ul id="links">
-          <li>Home</li>
-          <li><a href="store.html">Buy some junk</li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#about-us">About Pat</a></li>
+          <li><a href="store.html">Merchandise</a></li>
         </ul>
         <ul id="social">
           <li><img src="images/fb-icon.png" alt="facebook"></li>
@@ -27,34 +28,71 @@
           <li><img src="images/mail-icon.png" alt="mail"></li>
         </ul>
       </nav>
-      <img src="images/pugetSound.jpg" id="pugetSound">;
     </header>
-    
     <main>
-    <br />
-    <h2>What is it?</h2>
-    <p>A bunch of information about the product</p>
-    <br />
+        <img src="images/pugetSound.jpg" id="pugetSound">
+      <div id="cookie-desc">
+        <h2>What are Salmon Cookies?</h2>
+        <img src="images/pb-and-figs.jpg" id="coffee">
+        <p>Salmon cookies are a fresh, tasty, guilt-free option for your next cup of coffee. Fresh salmon is ground directly into the cookie mix, resulting in a high-protein snack thats great for the whole family.</p>        
+      </div>
+      <div id="flavors">
+        <h2>Available Varieties</h2>
+        <ul>
+          <li>Classic Chocolate Chip<img src= "images/choco-chip.jpg"></li>
+          <li>Peanut Butter and Fig<img src= "images/coffee-and-cookie.jpg"></li>
+          <li>Frosty Snickerdoodles <img src= "images/frosted-cookie.jpg"></li>
+        </ul>
+      </div>
+    
+      <div id="locations">
+        <h2>Locations</h2>
+        <br />
+        <dl id="stores">
+          <dt>Pike Place Market</dt>
+            <dd><img src="images/pike-place.jpg" alt: "Pike Place Market"></dd>
+            <dd> Putting what matters up front. Most cookies sold, obviously a tourist favorite<br/><br/>
+            <b>Address:</b> 123 1st Ave S. <br />
+            <b>Phone:</b> (206)867-5309
+            </dd>
+          <dt>Seattle Center</dt>
+            <dd><img src="images/space-needle.jpg" alt: "Space Needle"></dd>  
+            <dd>Iconic space needle and soon the revitalized Key Arena area will drive more business to the area.<br/><br/>
+              <b>Address:</b> 123 1st Ave S. <br />
+              <b>Phone:</b> (206)867-5309
+            </dd>
+          <dt>Capitol Hill</dt>
+            <dd><img src="images/cap-hill.jpg" alt: "Capitol Hill"></dd>
+            <dd>Coolest spot in Seattle, resonates with those interested in pursuing the alt experience<br/><br/>
+              <b>Address:</b> 123 1st Ave S. <br />
+              <b>Phone:</b> (206)867-5309
+            </dd>
+          <dt>Alki Beach</dt>
+            <dd><img src="images/alki-beach.jpg" alt: "Alki Beach"></dd>
+            <dd>Alki is the spot to be in the summer, rotate this accordingly<br/><br/>
+              <b>Address:</b> 123 1st Ave S. <br />
+              <b>Phone:</b> (206)867-5309
+            </dd>
+          <dt>SeaTac Airport</dt>
+            <dd><img src="images/sea-tac.jpg" alt: "Airport"></dd>
+            <dd>Decent revenue stream, not sure how much emphasis should be put on connecting our brand to SEA   <br/><br/>
+              <b>Address:</b> 123 1st Ave S. <br />
+              <b>Phone:</b> (206)867-5309
+            </dd>
+        </dl>
+      </div>
+      <br />
+      <div id="about-us">
+      <h2>A Fish Tale</h2>
+      <li>There has to be a really good reason for these things existing - whether its a science experiment gone right or a last ditch effort to get some extra protein in your day, this is the "why it matters"</p>
+      </div>
+      <br />
+    </main>
 
-    <h2 id="storeLocations">Locations</h2>
-    <br />
-    <h3>Pike Place Market</h3> <!-- move this list to a definition, id individual defs to move around page -->
-    <p class="locationInfo"> Putting what matters up front. Most cookies sold, obviously a tourist favorite<br/><br/>Contact info and hours of operation</p>
-    <h3>Seattle Center</h3>
-    <p class="locationInfo">Iconic space needle and soon the revitalized Key Arena area will drive more business to the area.<br/><br/>Contact info and hours of operation</p>
-    <h3>Capitol Hill</h3>
-    <p class="locationInfo">Coolest spot in Seattle, resonates with those interested in pursuing the alt experience<br/><br/>Contact info and hours of operation</p>
-    <h3>Alki Beach</h3>
-    <p class="locationInfo">Alki is the spot to be in the summer, rotate this accordingly<br/>Contact info and hours of operation</p>
-    <h3>SeaTac Airport</h3>
-    <p class="locationInfo">Decent revenue stream, not sure how much emphasis should be put on connecting our brand to SEA<br/><br/>Contact info and hours of operation</p>
-    <br />
-    <h2>A Fish Tale</h2>
-    <p>There has to be a really good reason for these things existing - whether its a science experiment gone right or a last ditch effort to get some extra protein in your day, this is the "why it matters"</p>
-    <br />
+  <footer>
     <a href= "sales.html" id = "biz-link">Employee Login</a>
-  </main>
+  </footer>
 
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/sales-app.js"></script>
   </body>
 </html>

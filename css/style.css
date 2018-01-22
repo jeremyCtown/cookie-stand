@@ -1,17 +1,29 @@
 body  {
-  background-color: rgb(190, 185, 185);
-  color: black;
+  background-color: rgb(241, 241, 241);
   font: georgia;
   border: 1px solid black;
   background-attachment: fixed;
-  background-size: 25%;
+  background-size: 100%;
+  background-position: 50% 50%;
 }
 
 header {
   max-width:1000px;
   margin: auto;
+  background-color:rgb(75, 69, 69);
+  position: relative;
+  z-index: 3;
+}
+
+header nav {
+  width: 1000px;
+  position: fixed;
+  top: 0;
   height: 120px;
-  background-color:rgb(87, 86, 86);
+  background-color:rgb(75, 69, 69);
+  border-bottom: 5px solid rgb(228, 94, 94);
+  border-left: 2px solid rgb(250, 87, 87);
+  border-right: 2px solid rgb(250, 87, 87);
 }
 
 header nav h1 {
@@ -21,7 +33,7 @@ header nav h1 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 45px;
   font-weight: bold;
-  color: rgb(250, 74, 118);
+  color: rgb(250, 87, 87);
   text-shadow: -1px -1px 0px rgb(36, 34, 34),
     1px -1px 0px rgb(27, 26, 26),
     -1px 1px 0px rgb(38, 150, 47),
@@ -34,9 +46,9 @@ header nav h2 {
   margin: 1px 0;
   padding: 0px 0 10px 30px;
   border: none;
-  color: rgb(41, 171, 223);
-  font-size: 18px;
-  font-family: 'Gloria-Hallelujah', cursive;
+  color: rgb(34, 145, 189);
+  font-size: 16px;
+  font-family: 'Rock Salt', cursive;
   z-index: 3;
 }
 
@@ -45,8 +57,8 @@ header nav img {
   transform: scaleX(-1);
   z-index: 1;
   position: relative;
-  bottom: 92px;
-  left: 207px;
+  bottom: 87px;
+  left: 80px;
 }
 
 header nav li {
@@ -54,24 +66,34 @@ header nav li {
 }
 
 #links{
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-size: 15px;
-  color: white;
-  text-align: right;
   display: inline;
   position: relative;
-  left: 270px;
-  bottom: 78px;
+  left: 250px;
+  bottom: 75px;
 }
 
 #links li {
   padding: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 15px;
+  color: white;
+  text-align: center;
 }
 
-#social{
+#links a {
+  color: white;
+  text-decoration: none;
+}
+
+#links a:hover {
+  background: rgb(250, 87, 87);
+  color: white;
+}
+
+#social {
   display: inline;
   position: relative;
-  left: 200px;
+  left: 230px;
   top: 20px;
 }
 
@@ -87,34 +109,169 @@ header nav li {
   margin: auto;
   border-top: 5px solid rgb(228, 94, 94);
   border-bottom: 5px solid rgb(228, 94, 94);
+  border-left: 2px solid rgb(250, 87, 87);
+  border-right: 2px solid rgb(250, 87, 87);
   position: relative;
-  bottom: 50px;
-  z-index: 3;
+  margin-top: 143px;
 }
 
 main {
   max-width: 1000px;
+  margin: auto;
+  
 }
 
-h3 {
+main h2 {
+  margin: 1px 0;
+  padding: 0px 0 10px 30px;
+  border: none;
+  color: rgb(54, 177, 64);
+  font-size: 16px;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: -1px 1px 0 rgb(61, 61, 61);
+  font-weight: bold;
+}
+
+main li{
+  color:rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#cookie-desc {
+  width: 45%;
+  background-color:rgb(83, 83, 83);
+  border: 2px solid rgb(250, 87, 87);
+  margin: 18px 18px 0 0;
+}
+
+#cookie-desc h2 {
+  margin-top: 15px;
+  padding: 15px 0 10px 30px;
+}
+
+#cookie-desc img {
+  width: 60%;
+  margin: 10px 0 10px 80px;
+  box-shadow: 2px 1px #333;
+}
+
+#cookie-desc p {
+  width: 90%;
+  margin: auto;
   position: relative;
-  left: 50%;
-  width: 50%;
-  margin: 3px 0;
-  padding: 2px 0 3px 2px;
-  border: 2px solid rgb(228, 94, 94);
-  background-color: rgb(58, 58, 58);
-  color: rgb(38, 150, 47);
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
+  color:rgb(255, 255, 255);
+}
+
+#flavors {
+  max-width: 45%;
+  position: relative;
+  left: 55%;
+  bottom: 383px;
+  border: 2px solid rgb(250, 87, 87);
+  background-color: rgb(83, 83, 83);
+  padding-bottom: 20px;
+}
+
+#flavors h2 {
+  margin-top: 15px;
+  padding-left: 20px;
+  color: rgb(21, 157, 211);
+}
+
+#flavors li {
+  margin-left: 30px;
+  position: relative;
+  bottom: 40px;
+}
+
+#flavors li img {
+  width: 150px;
+  margin: 0px 0 10px 30px;
+  position: relative;
+  top: 50px;
+  box-shadow: 2px 2px #333;
 }
 
 p {
   margin: 3px 0;
   padding: 2px 0 3px 2px;
+  color:rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#locations {
+  border: 2px solid rgb(250, 87, 87);
+  background-color: rgb(83, 83, 83); 
+  padding: 30px 5px;
+  position: relative;
+  bottom: 350px;
+}
+
+#locations h2 {
+  text-align: center;
+  max-width: 1000px;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  display: inline-block;
+}
+
+#stores {
+  column-count: 5;
+}
+
+h3 {
+  margin: 3px 0;
+  padding: 2px 0 3px 2px;
   border: 2px solid rgb(228, 94, 94);
-  background-color: rgb(58, 58, 58);
-  color:rgb(248, 230, 233);
+  color: rgb(38, 150, 47);
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+dt {
+  color: rgb(16, 135, 182);
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+dd {
+  color:rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 12px;
+}
+
+dd img {
+  width: 80px;
+  height: 75px;
+  margin: 10px 0;
+}
+
+.merch-pics {
+  width: 100px;
+  height: 100px;
+}
+
+#headline-img {
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+}
+
+#stuff {
+  position: relative;
+  left: 35%;
+  width: 30%;
+  text-align: center;
+}
+
+#chinook {
+  width: 25%;
 }
 
 table {
@@ -136,78 +293,6 @@ td {
   text-align: center;
   font-family: arial, sans-serif;
   font-size: 15px;
-}
-
-.salmonPic {
-  width: 100px;
-  height: 40px;
-}
-
-.locationInfo {
-  position: relative;
-  left: 50%;
-  width: 30%;
-}
-
-.merch {
-  position: relative;
-  left: 0%;
-  width: 20%;
-  margin: 3px 0;
-  padding: 2px 0 3px 2px;
-  border: 2px solid rgb(228, 94, 94);
-  background-color: rgb(58, 58, 58);
-  color: rgb(38, 150, 47);
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  text-align: center;
-}
-
-.merch-pics {
-  width: 100px;
-  height: 100px;
-}
-
-
-#slogan {
-  margin: 3px 0;
-  padding: 2px 0 3px 2px;
-  border: 2px solid rgb(228, 94, 94);
-  background-color: rgb(58, 58, 58);
-  text-align: left;
-  color:rgb(248, 230, 233);
-  width:20%;
-  font-family: 'Monserrat', sans-serif;
-  font-size: 20px;
-  text-shadow: -1px 0px 0px rgb(247, 103, 103);
-}
-#frosted-cookie {
-background-position: 50% 50%;
-background-attachment: fixed;
-}
-
-#headline-img {
-  border: 1px solid black;
-  width: 20px;
-  height: 20px;
-}
-
-#storeLocations {
-  position: relative;
-  left: 50%;
-  width: 50%;
-  margin:0;
-}
-
-#stuff {
-  position: relative;
-  left: 35%;
-  width: 30%;
-  text-align: center;
-}
-
-#chinook {
-  width: 25%;
 }
 
 #salesPage {
