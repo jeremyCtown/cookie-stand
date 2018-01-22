@@ -28,6 +28,10 @@ https://upload.wikimedia.org/wikipedia/commons/8/81/Alki_Beach_1.jpg
 SeaTac Airport
 https://assets3.thrillist.com/v1/image/1435910/size/tmg-slideshow_l.jpg
 
+Seattle Skyline
+https://www.istockphoto.com/photo/seattle-and-mount-rainier-gm186607494-29135620?esource=SEO_GIS_CDN_Redirect
+
+
 
 
 

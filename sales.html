@@ -5,15 +5,22 @@
     <title>Sales - Pat's Salmon Cookies</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Abel|Montserrat|Gloria+Hallelujah|Oswald|Kaushan+Script|Rock+Salt" rel="stylesheet">
   </head>
-  <body id="salesPage">
-    <h1><img src="images/salmon.png" class= "salmonPic" rel= "Salmon Picture">  Pat's Salmon Cookies  <img src="images/salmon.png" class= "salmonPic" rel= "Salmon Picture"></h1>
-    <br />
 
-    <a href= "index.html" id = "home-link">Home</a>
+  <body>
+    <header>
+      <nav id="header-sales">
+        <h1>Pat's Salmon Cookies</h1> 
+        <h2>Surprisingly tasty. Northwest fresh.</h2>
+        <img src="images/salmon2.png">
+        <ul id="links">
+          <li><a href="index.html">Home</a></li>
+      </nav>
+    </header>
     <br />
     <br />
-
+<div id= "dailySalesData">
     <h2 id = "salesData">Cookie Sales by Store Location</h2>
 
     <table id="dailyStoreSales"></table>
@@ -45,7 +52,7 @@
   
       </fieldset>
     </form>
-    
+  </div>
     <script type="text/javascript" src="js/sales-app.js"></script>
   </body>
 </html>
